@@ -126,6 +126,32 @@ export const Posts: CollectionConfig = {
         position: "sidebar",
       },
     },
+    // Denormalized at save time so the public site can show a byline
+    // without exposing the `users` collection (email, sessions, etc.) to anonymous readers.
+    {
+      name: "authorName",
+      type: "text",
+      admin: {
+        hidden: true,
+        readOnly: true,
+      },
+      hooks: {
+        beforeChange: [
+          async ({ data, req }) => {
+            const authorId =
+              typeof data?.author === "object" ? data.author?.id : data?.author;
+            if (!authorId) return undefined;
+            const author = await req.payload.findByID({
+              collection: "users",
+              id: authorId,
+              overrideAccess: true,
+              depth: 0,
+            });
+            return author?.name;
+          },
+        ],
+      },
+    },
     {
       name: "publishedAt",
       type: "date",

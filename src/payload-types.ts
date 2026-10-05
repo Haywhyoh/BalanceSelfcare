@@ -233,6 +233,7 @@ export interface Post {
     description?: string | null;
   };
   author: number | User;
+  authorName?: string | null;
   publishedAt?: string | null;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
@@ -414,6 +415,7 @@ export interface PostsSelect<T extends boolean = true> {
         description?: T;
       };
   author?: T;
+  authorName?: T;
   publishedAt?: T;
   generateSlug?: T;
   slug?: T;
