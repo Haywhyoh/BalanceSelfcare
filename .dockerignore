@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.github
+media
+*.md
+.env*
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store

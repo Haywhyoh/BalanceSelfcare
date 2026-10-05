@@ -3,6 +3,10 @@ import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
 import { getPayloadClient } from "@/lib/payload";
 
+// Posts live in the production DB, which the CI build can't see. Render on
+// request so the sitemap is never frozen with build-time content.
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",

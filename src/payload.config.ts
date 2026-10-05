@@ -11,6 +11,7 @@ import { Users } from "@/collections/Users";
 import { Media } from "@/collections/Media";
 import { Posts, generatePostTitle, generatePostURL } from "@/collections/Posts";
 import type { Post } from "@/payload-types";
+import { migrations } from "@/migrations";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -35,6 +36,9 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL || "",
     },
+    // Applied automatically on boot when NODE_ENV=production, so a deploy
+    // never needs a separate migrate step.
+    prodMigrations: migrations,
   }),
   sharp,
   typescript: {
