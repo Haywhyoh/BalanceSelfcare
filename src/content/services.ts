@@ -26,7 +26,7 @@ export const servicesOverview = [
     image: "/images/home/therapy.jpg",
     imageAlt: "Virtual psychotherapy session supporting mental health and wellness",
     summary:
-      "Phone and PHIPA-compliant video sessions for individuals, couples, and families 16+ across Ontario.",
+      "Phone and PHIPA-compliant video sessions for individuals, couples, and families 16+, wherever you are.",
   },
   {
     slug: "workshops",

@@ -61,7 +61,7 @@ export default function ServicesPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--ink-muted)]">
               We provide phone and PHIPA-compliant video sessions to clients 16
-              years and older across Ontario. Book phone or video appointments
+              years and older, wherever you are. Book phone or video appointments
               through Jane App.
             </p>
             <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">

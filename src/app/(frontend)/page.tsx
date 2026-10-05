@@ -27,7 +27,7 @@ const howItWorks = [
   {
     step: "Step 2",
     title: "Meet your virtual therapist",
-    body: "Sessions take place by phone or PHIPA-compliant video from wherever you feel comfortable in Ontario. No commute, no waiting room.",
+    body: "Sessions take place by phone or PHIPA-compliant video from wherever you feel comfortable. No commute, no waiting room.",
   },
   {
     step: "Step 3",
@@ -83,7 +83,7 @@ export default function HomePage() {
           </h1>
           <p className="reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
             Self-care is a lifestyle, not just an action. Meet with a virtual
-            therapist by phone or secure video from anywhere in Ontario. Clients
+            therapist by phone or secure video from wherever you are. Clients
             16+, individuals, couples, and families welcome.
           </p>
           <div className="reveal-delay-2 mt-8 flex flex-wrap gap-3">
@@ -117,10 +117,10 @@ export default function HomePage() {
             </h2>
             <div className="prose-balance mt-6 text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
               <p>
-                Balance Self-Care is a team of virtual therapists in Ontario
+                Balance Self-Care is a team of Ontario-based virtual therapists
                 offering culturally responsive psychotherapy for{" "}
                 <strong className="font-semibold text-[var(--ink)]">
-                  clients 16+ across Ontario
+                  clients 16+, wherever you are
                 </strong>{" "}
                 by phone and PHIPA-compliant video. Our approach takes your
                 culture, identity, faith, and lived experience seriously as part
@@ -280,13 +280,13 @@ export default function HomePage() {
         <div className="grid gap-12 md:grid-cols-2">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-4xl">
-              Virtual therapy across Ontario
+              Virtual therapy from Ontario, available wherever you are
             </h2>
             <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">
               Because sessions happen by phone or secure video, you can see a
-              virtual therapist from anywhere in Ontario, whether you live in a
-              major city or a remote community. Our clients attend from places
-              such as:
+              virtual therapist whether you live in a major city or a remote
+              community. We welcome clients from Ontario cities and communities
+              such as the following, and beyond:
             </p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {ontarioAreas.map((area) => (

@@ -34,8 +34,8 @@ export default function TermsPage() {
           Services and eligibility
         </h2>
         <p>
-          Virtual psychotherapy is offered to clients 16 years and older in
-          Ontario. Workshops, presentations, and consulting may be available more
+          Virtual psychotherapy is offered to clients 16 years and older by
+          Ontario-based therapists. Workshops, presentations, and consulting may be available more
           broadly across Canada and the United States, subject to agreement.
         </p>
 

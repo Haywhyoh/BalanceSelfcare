@@ -107,13 +107,17 @@ export function serviceSchemas() {
       name: "Virtual Psychotherapy in Ontario",
       serviceType: "Psychotherapy",
       provider: { "@id": `${siteConfig.url}/#organization` },
-      areaServed: { "@type": "AdministrativeArea", name: "Ontario" },
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Ontario" },
+        { "@type": "Country", name: "Canada" },
+        { "@type": "Country", name: "United States" },
+      ],
       audience: {
         "@type": "Audience",
         audienceType: "Individuals, couples, and families 16+",
       },
       description:
-        "Phone and PHIPA-compliant video psychotherapy sessions for clients 16 years and older across Ontario.",
+        "Phone and PHIPA-compliant video psychotherapy sessions for clients 16 years and older, delivered by Ontario-based therapists.",
       availableChannel: {
         "@type": "ServiceChannel",
         serviceUrl: siteConfig.janeAppUrl,

@@ -9,9 +9,9 @@ export type FaqItem = { question: string; answer: string };
  */
 export const homeFaqs: FaqItem[] = [
   {
-    question: "Who can see a virtual therapist in Ontario at Balance Self-Care?",
+    question: "Who can see a virtual therapist at Balance Self-Care?",
     answer:
-      "Our virtual therapists see individuals, couples, and families who are 16 years of age or older and located in Ontario at the time of the session. Sessions take place by phone or PHIPA-compliant video, so you can attend from home or anywhere private in the province.",
+      "Our Ontario-based virtual therapists see individuals, couples, and families who are 16 years of age or older, wherever you are. Sessions take place by phone or PHIPA-compliant video, so you can attend from home or anywhere private.",
   },
   {
     question: "Is virtual therapy in Ontario as effective as in-person therapy?",

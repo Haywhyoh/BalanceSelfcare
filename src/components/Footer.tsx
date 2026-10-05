@@ -97,7 +97,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-white/55 md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} Balance Self-Care. All rights reserved.</p>
-          <p>Virtual psychotherapy across Ontario · Workshops and presentations across Canada & the U.S.</p>
+          <p>Ontario-based virtual psychotherapy for clients anywhere · Workshops and presentations across Canada & the U.S.</p>
         </div>
       </div>
     </footer>

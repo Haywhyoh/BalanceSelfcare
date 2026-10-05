@@ -46,8 +46,8 @@ export default function PsychotherapyPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">
             Online counselling by phone and PHIPA-compliant video for
-            individuals, couples, and families 16 years and older across
-            Ontario.
+            individuals, couples, and families 16 years and older, delivered by
+            Ontario-based therapists.
           </p>
           <div className="mt-8">
             <Button href={siteConfig.janeAppUrl} external>
