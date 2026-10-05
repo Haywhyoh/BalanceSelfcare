@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Figtree, Fraunces } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/content/site";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-MMHD1Y9PQS";
 
 const display = Fraunces({
   variable: "--font-display",
@@ -56,6 +59,18 @@ export default function RootLayout({
   return (
     <html lang="en-CA" className={`${display.variable} ${body.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <JsonLd data={organizationSchema()} />
         <Header />
         <main className="flex-1">{children}</main>

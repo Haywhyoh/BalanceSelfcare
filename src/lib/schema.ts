@@ -113,6 +113,43 @@ export function serviceSchemas() {
   ];
 }
 
+export function blogPostingSchema(post: {
+  title: string;
+  description: string;
+  slug: string;
+  image?: string;
+  authorName: string;
+  publishedAt: string;
+  updatedAt: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    url: `${siteConfig.url}/blog/${post.slug}`,
+    image: post.image ? `${siteConfig.url}${post.image}` : undefined,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    author: {
+      "@type": "Person",
+      name: post.authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/images/brand/icon.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/blog/${post.slug}`,
+    },
+  };
+}
+
 export function breadcrumbSchema(
   items: { name: string; path: string }[],
 ) {

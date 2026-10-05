@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
+import { getPayloadClient } from "@/lib/payload";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes = [
@@ -13,10 +14,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/workshops",
     "/services/presentations",
     "/team",
+    "/blog",
     "/contact",
     "/privacy",
     "/terms",
   ];
+
+  const payload = await getPayloadClient();
+  const { docs: posts } = await payload.find({
+    collection: "posts",
+    where: { _status: { equals: "published" } },
+    overrideAccess: false,
+    depth: 0,
+    limit: 200,
+    sort: "-publishedAt",
+  });
 
   return [
     ...staticRoutes.map((path) => ({
@@ -30,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...posts.map((post) => ({
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }
