@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
   title: "Virtual Therapist in Ontario | Balance Self-Care",
   absoluteTitle: true,
   description:
-    "Virtual therapists in Ontario offering online therapy by phone or secure video for clients 16+. Culturally responsive care. Book a free 15-minute consultation.",
+    "Virtual therapists in Ontario offering online therapy by phone or secure video for clients 16+. Culturally responsive care. Free 15-minute consultation.",
   path: "/",
   image: "/images/home/hero.jpg",
 });
