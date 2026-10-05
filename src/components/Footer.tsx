@@ -10,7 +10,7 @@ const companyLinks = [
 
 const supportLinks = [
   { href: "/book", label: "Book an appointment" },
-  { href: "/services/psychotherapy", label: "Psychotherapy" },
+  { href: "/services/psychotherapy", label: "Virtual Therapy in Ontario" },
   { href: "/services/workshops", label: "Workshops" },
   { href: "/services/presentations", label: "Presentations" },
   { href: "/blog", label: "Blog" },
@@ -27,8 +27,9 @@ export function Footer() {
             Balance Self-Care
           </h2>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
-            Culturally responsive psychotherapy, workshops, and presentations
-            supporting individuals, families, organizations, and communities.
+            Culturally responsive virtual therapists in Ontario, plus workshops
+            and presentations supporting individuals, families, organizations,
+            and communities.
           </p>
           <div className="mt-5 space-y-2 text-sm">
             <a

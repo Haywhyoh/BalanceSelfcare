@@ -7,9 +7,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Psychotherapy",
+  title: "Virtual Psychotherapy & Online Counselling in Ontario",
   description:
-    "Phone and PHIPA-compliant video psychotherapy for clients 16+ across Ontario. Focus areas include anxiety, burnout, attachment, postpartum, and more.",
+    "Virtual psychotherapy and online counselling in Ontario by phone or PHIPA-compliant video for clients 16+. Anxiety, burnout, attachment, postpartum and more.",
   path: "/services/psychotherapy",
   image: "/images/services/psychotherapy.jpg",
 });
@@ -42,11 +42,12 @@ export default function PsychotherapyPage() {
             Services
           </p>
           <h1 className="mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl text-white md:text-6xl">
-            Virtual psychotherapy
+            Virtual psychotherapy in Ontario
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">
-            Phone and PHIPA-compliant video sessions for individuals, couples, and
-            families 16 years and older across Ontario.
+            Online counselling by phone and PHIPA-compliant video for
+            individuals, couples, and families 16 years and older across
+            Ontario.
           </p>
           <div className="mt-8">
             <Button href={siteConfig.janeAppUrl} external>

@@ -4,8 +4,6 @@ import { teamMembers } from "@/content/team";
 import { getPayloadClient } from "@/lib/payload";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
-
   const staticRoutes = [
     "",
     "/about",
@@ -31,15 +29,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   return [
+    // lastModified is intentionally omitted for static routes. Stamping every
+    // URL with "now" on each build teaches Google to ignore the field.
     ...staticRoutes.map((path) => ({
       url: `${siteConfig.url}${path}`,
-      lastModified: now,
       changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1 : path.startsWith("/services") || path === "/team" ? 0.9 : 0.7,
     })),
     ...teamMembers.map((member) => ({
       url: `${siteConfig.url}/team/${member.slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

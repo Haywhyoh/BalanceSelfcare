@@ -2,24 +2,62 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
+import { homeFaqs } from "@/content/faq";
 import { servicesOverview } from "@/content/services";
 import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
 import { buildMetadata } from "@/lib/metadata";
-import { serviceSchemas } from "@/lib/schema";
+import { faqSchema, serviceSchemas } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: siteConfig.name,
+  title: "Virtual Therapist in Ontario | Balance Self-Care",
+  absoluteTitle: true,
   description:
-    "Welcome to Balance Self-Care — virtual psychotherapy, interactive workshops, and presentations supporting mental health and personal growth across Canada and the United States.",
+    "Virtual therapists in Ontario offering online therapy by phone or secure video for clients 16+. Culturally responsive care. Book a free 15-minute consultation.",
   path: "/",
   image: "/images/home/hero.jpg",
 });
 
+const howItWorks = [
+  {
+    step: "Step 1",
+    title: "Book a free 15-minute consultation",
+    body: "Choose a time that works for you through our secure online scheduling. Ask questions, share what brings you in, and see whether we feel like the right fit.",
+  },
+  {
+    step: "Step 2",
+    title: "Meet your virtual therapist",
+    body: "Sessions take place by phone or PHIPA-compliant video from wherever you feel comfortable in Ontario. No commute, no waiting room.",
+  },
+  {
+    step: "Step 3",
+    title: "Begin your care plan",
+    body: "Together you clarify your goals and build a personalized plan that reflects your culture, values, and pace.",
+  },
+];
+
+const ontarioAreas = [
+  "Toronto",
+  "Ottawa",
+  "Mississauga",
+  "Brampton",
+  "Hamilton",
+  "London",
+  "Markham",
+  "Vaughan",
+  "Kitchener-Waterloo",
+  "Windsor",
+  "Oshawa",
+  "Barrie",
+  "Kingston",
+  "Thunder Bay",
+  "Sudbury",
+];
+
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={serviceSchemas()} />
+      <JsonLd data={[...serviceSchemas(), faqSchema(homeFaqs)]} />
 
       <section className="relative min-h-[88vh] overflow-hidden">
         <div className="absolute inset-0">
@@ -39,20 +77,21 @@ export default function HomePage() {
           <p className="reveal font-[family-name:var(--font-display)] text-4xl leading-none text-white sm:text-5xl md:text-7xl">
             Balance Self-Care
           </p>
-          <h1 className="reveal-delay mt-5 max-w-2xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
-            Self-care is a lifestyle, not just an action.
+          <h1 className="reveal-delay mt-5 max-w-3xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
+            Virtual Therapist in Ontario for Culturally Responsive Online
+            Therapy
           </h1>
           <p className="reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
-            Welcome to Balance Self-Care. We&apos;re so glad you&apos;re here.
-            Virtual psychotherapy, interactive workshops, and in-person trainings
-            designed to support your mental health and personal growth.
+            Self-care is a lifestyle, not just an action. Meet with a virtual
+            therapist by phone or secure video from anywhere in Ontario. Clients
+            16+, individuals, couples, and families welcome.
           </p>
           <div className="reveal-delay-2 mt-8 flex flex-wrap gap-3">
             <Button href={siteConfig.janeAppUrl} external variant="primary">
-              Book Now
+              Book a Free 15-Minute Consultation
             </Button>
-            <Button href="/contact" variant="ghost">
-              Learn More
+            <Button href="/services/psychotherapy" variant="ghost">
+              Explore Virtual Therapy
             </Button>
           </div>
         </div>
@@ -74,25 +113,27 @@ export default function HomePage() {
               Welcome
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-5xl">
-              Care that meets you where you are
+              Online therapy in Ontario that meets you where you are
             </h2>
             <div className="prose-balance mt-6 text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
               <p>
-                At Balance Self-Care, we offer virtual psychotherapy, interactive
-                workshops, and in-person trainings designed to support your mental
-                health and personal growth.
+                Balance Self-Care is a team of virtual therapists in Ontario
+                offering culturally responsive psychotherapy for{" "}
+                <strong className="font-semibold text-[var(--ink)]">
+                  clients 16+ across Ontario
+                </strong>{" "}
+                by phone and PHIPA-compliant video. Our approach takes your
+                culture, identity, faith, and lived experience seriously as part
+                of your care.
               </p>
               <p>
-                Our services are available across{" "}
+                Beyond one-to-one therapy, we deliver interactive workshops and
+                presentations on self-care, burnout, and wellness for
+                organizations and communities across{" "}
                 <strong className="font-semibold text-[var(--ink)]">
                   Canada and the United States
                 </strong>
-                , making it easier than ever to access the care and connection you
-                deserve. Psychotherapy sessions are available to clients{" "}
-                <strong className="font-semibold text-[var(--ink)]">
-                  16+ across Ontario
-                </strong>{" "}
-                by phone and PHIPA-compliant video.
+                .
               </p>
             </div>
             <div className="mt-8">
@@ -121,10 +162,39 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+            How it works
+          </p>
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-5xl">
+            Getting started with a virtual therapist in Ontario
+          </h2>
+        </div>
+        <ol className="mt-12 grid gap-6 md:grid-cols-3">
+          {howItWorks.map((item) => (
+            <li
+              key={item.step}
+              className="rounded-2xl bg-white/70 p-6 ring-1 ring-[var(--line)]"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+                {item.step}
+              </p>
+              <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--brand)]">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
+                {item.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
             What we do
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-5xl">
-            Therapy, workshops, and presentations
+            Online therapy services in Ontario, plus workshops and presentations
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
             Virtual individual, couple, and family psychotherapy — plus webinars,
@@ -207,6 +277,59 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid gap-12 md:grid-cols-2">
+          <div>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-4xl">
+              Virtual therapy across Ontario
+            </h2>
+            <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">
+              Because sessions happen by phone or secure video, you can see a
+              virtual therapist from anywhere in Ontario, whether you live in a
+              major city or a remote community. Our clients attend from places
+              such as:
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {ontarioAreas.map((area) => (
+                <li
+                  key={area}
+                  className="rounded-full bg-white/70 px-4 py-1.5 text-sm text-[var(--ink-muted)] ring-1 ring-[var(--line)]"
+                >
+                  {area}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-[var(--ink-muted)]">
+              Ready to talk to someone?{" "}
+              <Link
+                href="/services/psychotherapy"
+                className="font-semibold text-[var(--brand)] underline underline-offset-4"
+              >
+                Learn about virtual psychotherapy in Ontario
+              </Link>
+              .
+            </p>
+          </div>
+          <div>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-4xl">
+              Virtual therapy in Ontario: frequently asked questions
+            </h2>
+            <div className="mt-6 divide-y divide-[var(--line)] rounded-2xl bg-white/70 ring-1 ring-[var(--line)]">
+              {homeFaqs.map((faq) => (
+                <details key={faq.question} className="group px-5 py-4">
+                  <summary className="cursor-pointer list-none font-semibold text-[var(--brand)] marker:hidden">
+                    {faq.question}
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
         <div className="overflow-hidden rounded-[2rem] bg-[var(--brand)] px-8 py-14 text-[var(--brand-contrast)] md:px-14">
           <h2 className="max-w-2xl font-[family-name:var(--font-display)] text-3xl md:text-5xl">
             Ready to begin?

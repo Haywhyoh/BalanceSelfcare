@@ -6,12 +6,35 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "MedicalBusiness", "ProfessionalService"],
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
     email: siteConfig.email,
     description: siteConfig.description,
+    slogan: siteConfig.tagline,
     logo: `${siteConfig.url}/images/brand/icon.png`,
     image: `${siteConfig.url}/images/home/welcome.jpg`,
+    knowsAbout: [
+      "Virtual therapy in Ontario",
+      "Online psychotherapy",
+      "Culturally responsive therapy",
+      ...focusAreas,
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Virtual Therapy Services in Ontario",
+      itemListElement: [
+        "Virtual Psychotherapy in Ontario",
+        "Online Individual Therapy",
+        "Online Couples Therapy",
+        "Online Family Therapy",
+        "Self-Care Workshops",
+        "Mental Health Presentations",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name },
+      })),
+    },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Ontario" },
       { "@type": "Country", name: "Canada" },
@@ -24,6 +47,30 @@ export function organizationSchema() {
       email: siteConfig.email,
       availableLanguage: ["English"],
     },
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    inLanguage: "en-CA",
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+  };
+}
+
+export function faqSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   };
 }
 
@@ -57,9 +104,9 @@ export function serviceSchemas() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Virtual Psychotherapy",
+      name: "Virtual Psychotherapy in Ontario",
       serviceType: "Psychotherapy",
-      provider: { "@type": "Organization", name: siteConfig.name },
+      provider: { "@id": `${siteConfig.url}/#organization` },
       areaServed: { "@type": "AdministrativeArea", name: "Ontario" },
       audience: {
         "@type": "Audience",

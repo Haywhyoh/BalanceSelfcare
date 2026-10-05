@@ -10,6 +10,11 @@ type BuildMetadataInput = {
   image?: string;
   noIndex?: boolean;
   /**
+   * Use the title exactly as written, skipping the "| Balance Self-Care"
+   * suffix template. Use for the homepage so the keyword leads the title.
+   */
+  absoluteTitle?: boolean;
+  /**
    * Set to "article" for blog posts to get article-specific OpenGraph tags
    * (publishedTime, modifiedTime, authors) and unlock rich previews on
    * socials and some search engines.
@@ -26,6 +31,7 @@ export function buildMetadata({
   path = "",
   image = defaultOgImage,
   noIndex = false,
+  absoluteTitle = false,
   type = "website",
   publishedTime,
   modifiedTime,
@@ -33,10 +39,12 @@ export function buildMetadata({
 }: BuildMetadataInput): Metadata {
   const url = `${siteConfig.url}${path}`;
   const fullTitle =
-    title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
+    absoluteTitle || title === siteConfig.name
+      ? title
+      : `${title} | ${siteConfig.name}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph:

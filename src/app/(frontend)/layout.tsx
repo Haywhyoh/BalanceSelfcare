@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/content/site";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-MMHD1Y9PQS";
@@ -25,7 +25,7 @@ const body = Figtree({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: "Virtual Therapist in Ontario | Balance Self-Care",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -71,7 +71,7 @@ export default function RootLayout({
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
-        <JsonLd data={organizationSchema()} />
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
