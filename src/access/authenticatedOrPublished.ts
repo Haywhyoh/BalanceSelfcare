@@ -1,7 +1,7 @@
-import type { AccessArgs } from "payload";
+import type { AccessArgs, Where } from "payload";
 import type { User } from "@/payload-types";
 
-type IsAuthenticatedOrPublished = (args: AccessArgs<User>) => boolean | Record<string, unknown>;
+type IsAuthenticatedOrPublished = (args: AccessArgs<User>) => boolean | Where;
 
 /**
  * Signed-in staff can read drafts and published docs.
