@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f7f5;
+  --foreground: #142422;
+  --brand: #0c3f3a;
+  --brand-soft: #1a5c54;
+  --brand-contrast: #f7fbf9;
+  --accent: #b8843a;
+  --accent-soft: #d9b074;
+  --bg: #f3f7f5;
+  --bg-deep: #e4eee9;
+  --ink: #142422;
+  --ink-muted: #4a5c58;
+  --surface: #ffffff;
+  --line: #c9d9d3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(184, 132, 58, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(26, 92, 84, 0.14), transparent 50%),
+    linear-gradient(180deg, #eef5f1 0%, var(--bg) 35%, #eef4f1 100%);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(12, 63, 58, 0.18);
+}
+
+.reveal {
+  animation: rise 0.9s ease both;
+}
+
+.reveal-delay {
+  animation: rise 1s ease 0.15s both;
+}
+
+.reveal-delay-2 {
+  animation: rise 1.05s ease 0.3s both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(0, -12px, 0) scale(1.03);
+  }
+}
+
+.hero-media {
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+.prose-balance p + p {
+  margin-top: 1rem;
+}
