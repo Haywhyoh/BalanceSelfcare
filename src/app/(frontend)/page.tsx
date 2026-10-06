@@ -6,6 +6,10 @@ import { homeFaqs } from "@/content/faq";
 import { servicesOverview } from "@/content/services";
 import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
+import {
+  googleReviewSummary,
+  testimonials,
+} from "@/content/testimonials";
 import { buildMetadata } from "@/lib/metadata";
 import { faqSchema, serviceSchemas } from "@/lib/schema";
 
@@ -274,6 +278,107 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section
+        className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28"
+        aria-labelledby="client-reviews-heading"
+      >
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+            Client reviews
+          </p>
+          <h2
+            id="client-reviews-heading"
+            className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-5xl"
+          >
+            What clients say about virtual therapy at Balance Self-Care
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
+            Real{" "}
+            <strong className="font-semibold text-[var(--ink)]">
+              Google reviews
+            </strong>{" "}
+            from people who have worked with our Ontario-based virtual
+            therapists — culturally responsive, client-centred care by phone or
+            secure video.
+          </p>
+          <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[var(--ink-muted)]">
+            <span
+              className="inline-flex items-center gap-1 text-[var(--accent)]"
+              aria-hidden="true"
+            >
+              {Array.from({ length: 5 }).map((_, index) => (
+                <svg
+                  key={index}
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4 fill-current"
+                >
+                  <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.77l-4.94 2.6.94-5.49-4-3.9 5.53-.8L10 1.5z" />
+                </svg>
+              ))}
+            </span>
+            <span>
+              <strong className="font-semibold text-[var(--ink)]">
+                {googleReviewSummary.ratingValue.toFixed(1)}
+              </strong>{" "}
+              average from{" "}
+              <strong className="font-semibold text-[var(--ink)]">
+                {googleReviewSummary.reviewCount}
+              </strong>{" "}
+              {googleReviewSummary.sourceLabel}
+            </span>
+          </p>
+        </div>
+
+        <div className="mt-12">
+          <blockquote className="relative border-l-4 border-[var(--accent)] pl-6 md:pl-8">
+            <p className="font-[family-name:var(--font-display)] text-2xl leading-snug text-[var(--brand)] md:text-3xl">
+              &ldquo;{testimonials[0].quote}&rdquo;
+            </p>
+            <footer className="mt-5 text-sm text-[var(--ink-muted)]">
+              <cite className="not-italic font-semibold text-[var(--ink)]">
+                {testimonials[0].author}
+              </cite>
+              <span aria-hidden="true"> · </span>
+              <span>{testimonials[0].source} review</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {testimonials.slice(1).map((item) => (
+            <li key={item.id}>
+              <blockquote className="h-full">
+                <div
+                  className="flex gap-0.5 text-[var(--accent)]"
+                  aria-label={`${item.rating} out of 5 stars`}
+                >
+                  {Array.from({ length: item.rating }).map((_, index) => (
+                    <svg
+                      key={index}
+                      viewBox="0 0 20 20"
+                      className="h-3.5 w-3.5 fill-current"
+                    >
+                      <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.77l-4.94 2.6.94-5.49-4-3.9 5.53-.8L10 1.5z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+                <footer className="mt-4 text-sm">
+                  <cite className="not-italic font-semibold text-[var(--brand)]">
+                    {item.author}
+                  </cite>
+                  <span className="mt-0.5 block text-xs text-[var(--ink-muted)]">
+                    {item.source} review
+                  </span>
+                </footer>
+              </blockquote>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">

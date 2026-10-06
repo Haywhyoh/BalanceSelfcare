@@ -1,6 +1,10 @@
 import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
 import { focusAreas, presentationTopics } from "@/content/services";
+import {
+  googleReviewSummary,
+  testimonials,
+} from "@/content/testimonials";
 
 export function organizationSchema() {
   return {
@@ -20,6 +24,31 @@ export function organizationSchema() {
       "Culturally responsive therapy",
       ...focusAreas,
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: googleReviewSummary.ratingValue,
+      bestRating: googleReviewSummary.bestRating,
+      worstRating: googleReviewSummary.worstRating,
+      reviewCount: googleReviewSummary.reviewCount,
+    },
+    review: testimonials.map((item) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: item.author,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: item.rating,
+        bestRating: googleReviewSummary.bestRating,
+        worstRating: googleReviewSummary.worstRating,
+      },
+      reviewBody: item.quote,
+      publisher: {
+        "@type": "Organization",
+        name: item.source,
+      },
+    })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Virtual Therapy Services in Ontario",
