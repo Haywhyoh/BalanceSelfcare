@@ -159,13 +159,13 @@ export default function ServicesPage() {
 
       <section id="workshops" className="border-t border-[var(--line)] bg-[var(--brand)] text-[var(--brand-contrast)]">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
-          <div className="relative aspect-[3/4] max-h-[540px] overflow-hidden rounded-[2rem]">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[2rem] md:mx-0">
             <Image
               src="/images/services/workshop.png"
               alt="Self-care wellness workshop materials and interactive session"
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 24rem"
             />
           </div>
           <div>

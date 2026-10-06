@@ -46,13 +46,13 @@ export default function WorkshopsPage() {
             <Button href="/contact">Inquire about a workshop</Button>
           </div>
         </div>
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem]">
+        <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[2rem] md:mx-0 md:max-w-none">
           <Image
             src="/images/services/workshop.png"
             alt="Interactive self-care wellness workshop materials"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
