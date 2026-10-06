@@ -292,7 +292,7 @@ export default function HomePage() {
             id="client-reviews-heading"
             className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--brand)] md:text-5xl"
           >
-            What clients say about virtual therapy at Balance Self-Care
+            What people say about virtual therapy at Balance Self-Care
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
             Real{" "}
