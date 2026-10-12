@@ -362,6 +362,7 @@ export default function HomePage() {
               <blockquote className="h-full">
                 <div
                   className="flex gap-0.5 text-[var(--accent)]"
+                  role="img"
                   aria-label={`${item.rating} out of 5 stars`}
                 >
                   {Array.from({ length: item.rating }).map((_, index) => (
@@ -369,6 +370,7 @@ export default function HomePage() {
                       key={index}
                       viewBox="0 0 20 20"
                       className="h-3.5 w-3.5 fill-current"
+                      aria-hidden="true"
                     >
                       <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.77l-4.94 2.6.94-5.49-4-3.9 5.53-.8L10 1.5z" />
                     </svg>
