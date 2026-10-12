@@ -92,16 +92,13 @@ export default function HomePage() {
           <p className="reveal font-[family-name:var(--font-display)] text-4xl leading-none text-white sm:text-5xl md:text-7xl">
             Balance Self-Care
           </p>
-          <h1 className="reveal-delay mt-5 max-w-4xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
-            Culturally competent, trauma-informed counselling, psychotherapy,
-            and group counselling for Black families, Black people, and the
-            diaspora across Ontario
+          <h1 className="reveal-delay mt-5 max-w-3xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
+            Counselling and psychotherapy for Black families across Ontario
           </h1>
           <p className="reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
             Self-care is a lifestyle, not just an action. Meet by phone or
-            secure video from Toronto, Ottawa, Mississauga, Brampton, Hamilton,
-            London, and communities across Ontario. Clients 16+, individuals,
-            couples, and families welcome.
+            secure video. Clients 16+, individuals, couples, and families
+            welcome.
           </p>
           <div className="reveal-delay-2 mt-8 flex flex-wrap gap-3">
             <Button href={siteConfig.janeAppUrl} external variant="primary">
