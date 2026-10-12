@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
+import { pageUrl } from "@/lib/urls";
 
 const defaultOgImage = "/images/home/welcome.jpg";
 
@@ -39,7 +40,7 @@ export function buildMetadata({
   modifiedTime,
   authors,
 }: BuildMetadataInput): Metadata {
-  const url = `${siteConfig.url}${path}`;
+  const url = pageUrl(path);
   const fullTitle =
     absoluteTitle || title === siteConfig.name
       ? title

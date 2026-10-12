@@ -18,6 +18,7 @@ import { slugField } from "payload";
 import { authenticated } from "@/access/authenticated";
 import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
 import { siteConfig } from "@/content/site";
+import { pageUrl } from "@/lib/urls";
 
 /**
  * Articles authored by staff in the admin panel.
@@ -180,4 +181,4 @@ export const generatePostTitle = (title?: string | null) =>
   title ? `${title} | ${siteConfig.name} Blog` : `${siteConfig.name} Blog`;
 
 export const generatePostURL = (slug?: string | null) =>
-  slug ? `${siteConfig.url}/blog/${slug}` : `${siteConfig.url}/blog`;
+  slug ? pageUrl(`/blog/${slug}`) : pageUrl("/blog");

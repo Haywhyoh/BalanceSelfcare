@@ -1,4 +1,5 @@
 import { siteConfig } from "@/content/site";
+import { pageUrl } from "@/lib/urls";
 import { teamMembers } from "@/content/team";
 import { focusAreas, presentationTopics } from "@/content/services";
 import {
@@ -12,7 +13,7 @@ export function organizationSchema() {
     "@type": ["Organization", "MedicalBusiness", "ProfessionalService"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
-    url: siteConfig.url,
+    url: pageUrl("/"),
     email: siteConfig.email,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
@@ -84,7 +85,7 @@ export function websiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteConfig.url}/#website`,
-    url: siteConfig.url,
+    url: pageUrl("/"),
     name: siteConfig.name,
     inLanguage: "en-CA",
     publisher: { "@id": `${siteConfig.url}/#organization` },
@@ -114,11 +115,11 @@ export function personSchema(slug: string) {
     jobTitle: member.role,
     description: member.summary,
     image: `${siteConfig.url}${member.image}`,
-    url: `${siteConfig.url}/team/${member.slug}`,
+    url: pageUrl(`/team/${member.slug}`),
     worksFor: {
       "@type": "Organization",
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: pageUrl("/"),
     },
     knowsAbout: member.specialties,
     sameAs: [
@@ -200,7 +201,7 @@ export function blogPostingSchema(post: {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    url: `${siteConfig.url}/blog/${post.slug}`,
+    url: pageUrl(`/blog/${post.slug}`),
     image: post.image ? `${siteConfig.url}${post.image}` : undefined,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
@@ -218,7 +219,7 @@ export function blogPostingSchema(post: {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/blog/${post.slug}`,
+      "@id": pageUrl(`/blog/${post.slug}`),
     },
   };
 }
@@ -233,7 +234,7 @@ export function breadcrumbSchema(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${siteConfig.url}${item.path}`,
+      item: pageUrl(item.path),
     })),
   };
 }

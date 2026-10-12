@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/content/site";
+import { pageUrl } from "@/lib/urls";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: pageUrl("/"),
     images: [{ url: "/images/home/welcome.jpg", alt: siteConfig.name }],
   },
   twitter: {

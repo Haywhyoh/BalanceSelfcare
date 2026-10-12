@@ -6,9 +6,15 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/content/site";
 
+function withoutTrailingSlash(path: string) {
+  return path.length > 1 ? path.replace(/\/+$/, "") : "/";
+}
+
 function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const current = withoutTrailingSlash(pathname);
+  const target = withoutTrailingSlash(href);
+  if (target === "/") return current === "/";
+  return current === target || current.startsWith(`${target}/`);
 }
 
 export function Header() {
