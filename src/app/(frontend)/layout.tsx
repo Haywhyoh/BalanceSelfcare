@@ -25,7 +25,7 @@ const body = Figtree({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Virtual Therapist in Ontario | Balance Self-Care",
+    default: "Counselling & Psychotherapy for Black Families across Ontario",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

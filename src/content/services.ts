@@ -46,6 +46,6 @@ export const servicesOverview = [
     image: "/images/home/presentation.jpg",
     imageAlt: "Mental health presentation and in-person training session",
     summary:
-      "Media and in-person presentations on burnout, boundaries, anxiety, and stress across Canada and the U.S.",
+      "Media and in-person presentations on burnout, boundaries, anxiety, and stress across Canada.",
   },
 ] as const;

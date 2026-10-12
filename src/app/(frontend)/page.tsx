@@ -13,11 +13,40 @@ import {
 import { buildMetadata } from "@/lib/metadata";
 import { faqSchema, serviceSchemas } from "@/lib/schema";
 
+const ontarioAreas = [
+  "Toronto",
+  "Ottawa",
+  "Mississauga",
+  "Brampton",
+  "Hamilton",
+  "London",
+  "Markham",
+  "Vaughan",
+  "Kitchener-Waterloo",
+  "Windsor",
+  "Oshawa",
+  "Barrie",
+  "Kingston",
+  "Thunder Bay",
+  "Sudbury",
+];
+
 export const metadata = buildMetadata({
-  title: "Virtual Therapist in Ontario | Balance Self-Care",
+  title: "Counselling & Psychotherapy for Black Families across Ontario",
   absoluteTitle: true,
   description:
-    "Virtual therapists in Ontario offering online therapy by phone or secure video for clients 16+. Culturally responsive care. Free 15-minute consultation.",
+    "Trauma-informed, culturally competent group counselling for Black people and the diaspora in Toronto, Ottawa, Mississauga, Brampton, Hamilton, and London.",
+  keywords: [
+    "counselling",
+    "psychotherapy",
+    "group counselling",
+    "trauma-informed",
+    "culturally competent",
+    "Black families",
+    "Black people",
+    "diaspora",
+    ...ontarioAreas,
+  ],
   path: "/",
   image: "/images/home/hero.jpg",
 });
@@ -38,24 +67,6 @@ const howItWorks = [
     title: "Begin your care plan",
     body: "Together you clarify your goals and build a personalized plan that reflects your culture, values, and pace.",
   },
-];
-
-const ontarioAreas = [
-  "Toronto",
-  "Ottawa",
-  "Mississauga",
-  "Brampton",
-  "Hamilton",
-  "London",
-  "Markham",
-  "Vaughan",
-  "Kitchener-Waterloo",
-  "Windsor",
-  "Oshawa",
-  "Barrie",
-  "Kingston",
-  "Thunder Bay",
-  "Sudbury",
 ];
 
 export default function HomePage() {
@@ -81,14 +92,16 @@ export default function HomePage() {
           <p className="reveal font-[family-name:var(--font-display)] text-4xl leading-none text-white sm:text-5xl md:text-7xl">
             Balance Self-Care
           </p>
-          <h1 className="reveal-delay mt-5 max-w-3xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
-            Virtual Therapist in Ontario for Culturally Responsive Online
-            Therapy
+          <h1 className="reveal-delay mt-5 max-w-4xl font-[family-name:var(--font-display)] text-2xl leading-snug text-white/95 sm:text-3xl md:text-4xl">
+            Culturally competent, trauma-informed counselling, psychotherapy,
+            and group counselling for Black families, Black people, and the
+            diaspora across Ontario
           </h1>
           <p className="reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
-            Self-care is a lifestyle, not just an action. Meet with a virtual
-            therapist by phone or secure video from wherever you are. Clients
-            16+, individuals, couples, and families welcome.
+            Self-care is a lifestyle, not just an action. Meet by phone or
+            secure video from Toronto, Ottawa, Mississauga, Brampton, Hamilton,
+            London, and communities across Ontario. Clients 16+, individuals,
+            couples, and families welcome.
           </p>
           <div className="reveal-delay-2 mt-8 flex flex-wrap gap-3">
             <Button href={siteConfig.janeAppUrl} external variant="primary">
@@ -135,7 +148,7 @@ export default function HomePage() {
                 presentations on self-care, burnout, and wellness for
                 organizations and communities across{" "}
                 <strong className="font-semibold text-[var(--ink)]">
-                  Canada and the United States
+                  Canada
                 </strong>
                 .
               </p>

@@ -14,6 +14,7 @@ type BuildMetadataInput = {
    * suffix template. Use for the homepage so the keyword leads the title.
    */
   absoluteTitle?: boolean;
+  keywords?: string[];
   /**
    * Set to "article" for blog posts to get article-specific OpenGraph tags
    * (publishedTime, modifiedTime, authors) and unlock rich previews on
@@ -32,6 +33,7 @@ export function buildMetadata({
   image = defaultOgImage,
   noIndex = false,
   absoluteTitle = false,
+  keywords,
   type = "website",
   publishedTime,
   modifiedTime,
@@ -46,6 +48,7 @@ export function buildMetadata({
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
+    keywords,
     alternates: { canonical: url },
     openGraph:
       type === "article"

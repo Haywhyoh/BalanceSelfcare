@@ -36,7 +36,7 @@ export default function TermsPage() {
         <p>
           Virtual psychotherapy is offered to clients 16 years and older by
           Ontario-based therapists. Workshops, presentations, and consulting may be available more
-          broadly across Canada and the United States, subject to agreement.
+          across Canada, subject to agreement.
         </p>
 
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--brand)]">

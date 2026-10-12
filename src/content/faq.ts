@@ -39,6 +39,11 @@ export const homeFaqs: FaqItem[] = [
       "Counselling services from a Registered Social Worker are exempt from tax, and receipts are emailed after each session. Many extended health plans reimburse social work and psychotherapy services, so check your plan for details before booking.",
   },
   {
+    question: "Can you bill my insurance directly for sessions?",
+    answer:
+      "At this time, we are unable to offer direct billing to insurance providers. However, we hope to introduce this service in the coming months.",
+  },
+  {
     question: "How do I book a virtual therapy session in Ontario?",
     answer:
       "Book online through our secure scheduling system. If you are unsure whether we are the right fit, start with a complimentary 15-minute consultation to ask questions and meet a clinician before committing to ongoing sessions.",

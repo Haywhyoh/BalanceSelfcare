@@ -37,7 +37,7 @@ export default function ServicesPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--ink-muted)]">
           From PHIPA-compliant virtual therapy in Ontario to workshops and
-          presentations across Canada and the United States.
+          presentations across Canada.
         </p>
       </section>
 

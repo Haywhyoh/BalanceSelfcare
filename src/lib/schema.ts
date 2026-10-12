@@ -57,6 +57,7 @@ export function organizationSchema() {
         "Online Individual Therapy",
         "Online Couples Therapy",
         "Online Family Therapy",
+        "Group Counselling",
         "Self-Care Workshops",
         "Mental Health Presentations",
       ].map((name) => ({
@@ -67,7 +68,6 @@ export function organizationSchema() {
     areaServed: [
       { "@type": "AdministrativeArea", name: "Ontario" },
       { "@type": "Country", name: "Canada" },
-      { "@type": "Country", name: "United States" },
     ],
     sameAs: [siteConfig.social.instagram, siteConfig.social.facebook],
     contactPoint: {
@@ -139,7 +139,6 @@ export function serviceSchemas() {
       areaServed: [
         { "@type": "AdministrativeArea", name: "Ontario" },
         { "@type": "Country", name: "Canada" },
-        { "@type": "Country", name: "United States" },
       ],
       audience: {
         "@type": "Audience",
@@ -166,10 +165,7 @@ export function serviceSchemas() {
       name: "Self-Care Wellness Workshops",
       serviceType: "Workshop",
       provider: { "@type": "Organization", name: siteConfig.name },
-      areaServed: [
-        { "@type": "Country", name: "Canada" },
-        { "@type": "Country", name: "United States" },
-      ],
+      areaServed: [{ "@type": "Country", name: "Canada" }],
       description:
         "Interactive workshops on self-care, self-compassion, and overall wellness for groups and organizations.",
     },
@@ -179,10 +175,7 @@ export function serviceSchemas() {
       name: "Mental Health Presentations",
       serviceType: "Presentation",
       provider: { "@type": "Organization", name: siteConfig.name },
-      areaServed: [
-        { "@type": "Country", name: "Canada" },
-        { "@type": "Country", name: "United States" },
-      ],
+      areaServed: [{ "@type": "Country", name: "Canada" }],
       description:
         "Media and in-person presentations on self-care, burnout, boundaries, anxiety, and stress management.",
       about: presentationTopics.map((topic) => ({

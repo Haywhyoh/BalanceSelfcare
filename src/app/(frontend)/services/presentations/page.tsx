@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "Presentations",
   description:
-    "Media and in-person mental health presentations on self-care, burnout, boundaries, anxiety, and stress management across Canada and the United States.",
+    "Media and in-person mental health presentations on self-care, burnout, boundaries, anxiety, and stress management across Canada.",
   path: "/services/presentations",
   image: "/images/services/presentation-1.png",
 });
@@ -81,7 +81,7 @@ export default function PresentationsPage() {
             <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">
               Fees are determined by the type and customization of the
               presentation, travel distance (if applicable), and materials needed.
-              Presentations are available across Canada and the United States.
+              Presentations are available across Canada.
             </p>
             <div className="mt-8">
               <Button href="/contact">Schedule a presentation</Button>

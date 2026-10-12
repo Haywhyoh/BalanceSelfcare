@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Balance Self-Care",
   tagline: "Self-care is a lifestyle, not just an action.",
   description:
-    "Culturally responsive virtual therapists in Ontario offering online therapy by phone or secure video for clients 16+. Workshops and presentations across Canada and the United States.",
+    "Trauma-informed, culturally competent group counselling for Black people and the diaspora in Toronto, Ottawa, Mississauga, Brampton, Hamilton, and London.",
   url: "https://balanceselfcare.ca",
   email: "admin@balanceselfcare.ca",
   janeAppUrl: "https://balanceself-care.janeapp.com/",
@@ -16,7 +16,7 @@ export const siteConfig = {
   },
   serviceArea: {
     therapy: "Ontario",
-    broader: "Canada and the United States",
+    broader: "Canada",
   },
 } as const;
 
