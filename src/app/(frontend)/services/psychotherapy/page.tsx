@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { focusAreas } from "@/content/services";
@@ -88,6 +89,16 @@ export default function PsychotherapyPage() {
           <Button href={siteConfig.janeAppUrl} external>
             Schedule an appointment
           </Button>
+          <p className="pt-2 text-sm text-[var(--ink-muted)]">
+            Looking for care in your city?{" "}
+            <Link
+              href="/locations"
+              className="font-semibold text-[var(--brand)] underline underline-offset-4"
+            >
+              Find a virtual therapist across Ontario
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

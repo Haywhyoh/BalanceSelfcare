@@ -3,6 +3,10 @@ import { pageUrl } from "@/lib/urls";
 import { teamMembers } from "@/content/team";
 import { focusAreas, presentationTopics } from "@/content/services";
 import {
+  ontarioLocations,
+  type LocationContent,
+} from "@/content/locations";
+import {
   googleReviewSummary,
   testimonials,
 } from "@/content/testimonials";
@@ -69,6 +73,10 @@ export function organizationSchema() {
     areaServed: [
       { "@type": "AdministrativeArea", name: "Ontario" },
       { "@type": "Country", name: "Canada" },
+      ...ontarioLocations.map((location) => ({
+        "@type": "City",
+        name: location.name,
+      })),
     ],
     sameAs: [siteConfig.social.instagram, siteConfig.social.facebook],
     contactPoint: {
@@ -220,6 +228,35 @@ export function blogPostingSchema(post: {
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl(`/blog/${post.slug}`),
+    },
+  };
+}
+
+export function locationServiceSchema(location: LocationContent) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Virtual therapy in ${location.name}`,
+    serviceType: "Online psychotherapy",
+    url: pageUrl(`/locations/${location.slug}`),
+    description: location.description,
+    provider: { "@id": `${siteConfig.url}/#organization` },
+    areaServed: {
+      "@type": "City",
+      name: location.name,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Ontario",
+        containedInPlace: { "@type": "Country", name: "Canada" },
+      },
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Individuals, couples, and families 16+",
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: siteConfig.janeAppUrl,
     },
   };
 }

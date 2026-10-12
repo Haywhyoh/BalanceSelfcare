@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ontarioLocations } from "@/content/locations";
 import { siteConfig } from "@/content/site";
 
 const companyLinks = [
@@ -87,6 +88,26 @@ export function Footer() {
                   className="text-sm text-white/85 transition hover:text-white"
                 >
                   {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-5 py-8 md:px-8">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
+            Virtual therapists across Ontario
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+            {ontarioLocations.map((location) => (
+              <li key={location.slug}>
+                <Link
+                  href={`/locations/${location.slug}`}
+                  className="text-sm text-white/85 transition hover:text-white"
+                >
+                  {location.name}
                 </Link>
               </li>
             ))}

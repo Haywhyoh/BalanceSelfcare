@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { homeFaqs } from "@/content/faq";
+import { ontarioLocations } from "@/content/locations";
 import { servicesOverview } from "@/content/services";
 import { siteConfig } from "@/content/site";
 import { teamMembers } from "@/content/team";
@@ -12,24 +13,6 @@ import {
 } from "@/content/testimonials";
 import { buildMetadata } from "@/lib/metadata";
 import { faqSchema, serviceSchemas } from "@/lib/schema";
-
-const ontarioAreas = [
-  "Toronto",
-  "Ottawa",
-  "Mississauga",
-  "Brampton",
-  "Hamilton",
-  "London",
-  "Markham",
-  "Vaughan",
-  "Kitchener-Waterloo",
-  "Windsor",
-  "Oshawa",
-  "Barrie",
-  "Kingston",
-  "Thunder Bay",
-  "Sudbury",
-];
 
 export const metadata = buildMetadata({
   title: "Counselling & Psychotherapy for Black Families across Ontario",
@@ -45,7 +28,7 @@ export const metadata = buildMetadata({
     "Black families",
     "Black people",
     "diaspora",
-    ...ontarioAreas,
+    ...ontarioLocations.map((location) => location.name),
   ],
   path: "/",
   image: "/images/home/hero.jpg",
@@ -402,16 +385,18 @@ export default function HomePage() {
             <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">
               Because sessions happen by phone or secure video, you can see a
               virtual therapist whether you live in a major city or a remote
-              community. We welcome clients from Ontario cities and communities
-              such as the following, and beyond:
+              community. Explore online therapy in these Ontario cities, and
+              beyond:
             </p>
             <ul className="mt-5 flex flex-wrap gap-2">
-              {ontarioAreas.map((area) => (
-                <li
-                  key={area}
-                  className="rounded-full bg-white/70 px-4 py-1.5 text-sm text-[var(--ink-muted)] ring-1 ring-[var(--line)]"
-                >
-                  {area}
+              {ontarioLocations.map((location) => (
+                <li key={location.slug}>
+                  <Link
+                    href={`/locations/${location.slug}`}
+                    className="inline-flex rounded-full bg-white/70 px-4 py-1.5 text-sm text-[var(--ink-muted)] ring-1 ring-[var(--line)] transition hover:bg-white hover:text-[var(--brand)]"
+                  >
+                    {location.name}
+                  </Link>
                 </li>
               ))}
             </ul>

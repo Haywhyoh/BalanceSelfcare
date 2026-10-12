@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { pageUrl } from "@/lib/urls";
+import { ontarioLocations } from "@/content/locations";
 import { teamMembers } from "@/content/team";
 import { getPayloadClient } from "@/lib/payload";
 
@@ -18,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/team",
     "/blog",
     "/contact",
+    "/locations",
     "/privacy",
     "/terms",
   ];
@@ -38,7 +40,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes.map((path) => ({
       url: pageUrl(path),
       changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
-      priority: path === "" ? 1 : path.startsWith("/services") || path === "/team" ? 0.9 : 0.7,
+      priority:
+        path === ""
+          ? 1
+          : path.startsWith("/services") || path === "/team" || path === "/locations"
+            ? 0.9
+            : 0.7,
+    })),
+    ...ontarioLocations.map((location) => ({
+      url: pageUrl(`/locations/${location.slug}`),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     ...teamMembers.map((member) => ({
       url: pageUrl(`/team/${member.slug}`),

@@ -30,6 +30,7 @@ export const navLinks = [
       { href: "/services/psychotherapy", label: "Psychotherapy" },
       { href: "/services/workshops", label: "Workshops" },
       { href: "/services/presentations", label: "Presentations" },
+      { href: "/locations", label: "Online therapy by city" },
     ],
   },
   { href: "/team", label: "Team" },
