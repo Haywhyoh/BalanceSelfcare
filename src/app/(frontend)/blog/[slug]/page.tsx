@@ -5,19 +5,13 @@ import { getPayloadClient } from "@/lib/payload";
 import { buildMetadata } from "@/lib/metadata";
 import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
-import type { Media } from "@/payload-types";
+import { mediaFileUrl } from "@/lib/media";
 
 export const revalidate = 60;
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
-function mediaUrl(media: Media | number | null | undefined, size?: "og" | "card") {
-  if (!media || typeof media === "number") return null;
-  if (size) return media.sizes?.[size]?.url ?? media.url ?? null;
-  return media.url ?? null;
-}
 
 async function getPost(slug: string) {
   const payload = await getPayloadClient();
@@ -53,7 +47,7 @@ export async function generateMetadata({ params }: Props) {
 
   const description = post.meta?.description || post.excerpt;
   const image =
-    mediaUrl(post.meta?.image, "og") ?? mediaUrl(post.heroImage, "card") ?? undefined;
+    mediaFileUrl(post.meta?.image, "og") ?? mediaFileUrl(post.heroImage, "card") ?? undefined;
 
   return buildMetadata({
     title: post.meta?.title || post.title,
@@ -72,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const hero = mediaUrl(post.heroImage, "card");
+  const hero = mediaFileUrl(post.heroImage, "card");
   const name = post.authorName || "Balance Self-Care Team";
   const publishedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString("en-CA", {

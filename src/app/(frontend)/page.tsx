@@ -1,5 +1,6 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
+import { preload } from "react-dom";
 import { Button } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { homeFaqs } from "@/content/faq";
@@ -34,6 +35,18 @@ export const metadata = buildMetadata({
   image: "/images/home/hero.jpg",
 });
 
+const heroImage = {
+  src: "/images/home/hero.jpg",
+  alt: "Calm botanical setting reflecting self-care and restoration",
+  sizes: "100vw",
+} as const;
+
+const { props: heroImageProps } = getImageProps({
+  ...heroImage,
+  fill: true,
+  fetchPriority: "high",
+});
+
 const howItWorks = [
   {
     step: "Step 1",
@@ -53,6 +66,13 @@ const howItWorks = [
 ];
 
 export default function HomePage() {
+  preload(heroImageProps.src, {
+    as: "image",
+    imageSrcSet: heroImageProps.srcSet,
+    imageSizes: heroImageProps.sizes,
+    fetchPriority: "high",
+  });
+
   return (
     <>
       <JsonLd data={[...serviceSchemas(), faqSchema(homeFaqs)]} />
@@ -60,12 +80,11 @@ export default function HomePage() {
       <section className="relative min-h-[88vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/home/hero.jpg"
-            alt="Calm botanical setting reflecting self-care and restoration"
+            {...heroImage}
             fill
-            priority
+            preload
+            fetchPriority="high"
             className="hero-media object-cover object-center"
-            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[rgba(8,32,29,0.82)] via-[rgba(8,32,29,0.55)] to-[rgba(8,32,29,0.25)]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,32,29,0.55)] via-transparent to-transparent" />

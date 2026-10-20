@@ -4,7 +4,7 @@ import { getPayloadClient } from "@/lib/payload";
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
-import type { Media } from "@/payload-types";
+import { mediaFileUrl } from "@/lib/media";
 
 export const metadata = buildMetadata({
   title: "Blog",
@@ -14,11 +14,6 @@ export const metadata = buildMetadata({
 });
 
 export const revalidate = 60;
-
-function heroUrl(heroImage: Media | number | null | undefined) {
-  if (!heroImage || typeof heroImage === "number") return null;
-  return heroImage.sizes?.card?.url ?? heroImage.url ?? null;
-}
 
 export default async function BlogPage() {
   const payload = await getPayloadClient();
@@ -59,14 +54,18 @@ export default async function BlogPage() {
         ) : (
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => {
-              const image = heroUrl(post.heroImage);
+              const image = mediaFileUrl(post.heroImage, "card");
+              const alt =
+                post.heroImage && typeof post.heroImage === "object"
+                  ? post.heroImage.alt || post.title
+                  : post.title;
               return (
                 <Link key={post.id} href={`/blog/${post.slug}`} className="group block">
                   {image ? (
                     <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--bg-deep)]">
                       <Image
                         src={image}
-                        alt={post.title}
+                        alt={alt}
                         fill
                         className="object-cover transition duration-700 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 33vw"
@@ -85,9 +84,6 @@ export default async function BlogPage() {
                   <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--brand)] transition group-hover:text-[var(--brand-soft)]">
                     {post.title}
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">
-                    {post.excerpt}
-                  </p>
                 </Link>
               );
             })}

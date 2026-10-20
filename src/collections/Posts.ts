@@ -66,7 +66,7 @@ export const Posts: CollectionConfig = {
               required: true,
               admin: {
                 description:
-                  "Short summary shown on the blog index and used as a fallback SEO description.",
+                  "Short summary used as a fallback SEO description. It is not shown on the blog index.",
               },
             },
             {
