@@ -205,7 +205,7 @@ export interface Post {
   id: number;
   title: string;
   /**
-   * Short summary shown on the blog index and used as a fallback SEO description.
+   * Short summary used as a fallback SEO description. It is not shown on the blog index.
    */
   excerpt: string;
   heroImage?: (number | null) | Media;
