@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
 import {
+  EXPERIMENTAL_TableFeature,
   FixedToolbarFeature,
   HeadingFeature,
   HorizontalRuleFeature,
@@ -23,7 +24,7 @@ import { pageUrl } from "@/lib/urls";
 /**
  * Articles authored by staff in the admin panel.
  * - Drafts never reach the public site; only `_status: 'published'` docs are readable publicly.
- * - `content` uses Lexical with a fixed + inline toolbar, headings, and media uploads —
+ * - `content` uses Lexical with a fixed + inline toolbar, headings, tables, and media uploads —
  *   a richer editing experience than the default WordPress editor.
  * - The `meta` tab (from @payloadcms/plugin-seo/fields) gives editors full control over
  *   SEO title, description, and social image, with one-click "generate" from the article.
@@ -84,6 +85,7 @@ export const Posts: CollectionConfig = {
                   ...rootFeatures,
                   HeadingFeature({ enabledHeadingSizes: ["h2", "h3", "h4"] }),
                   HorizontalRuleFeature(),
+                  EXPERIMENTAL_TableFeature(),
                   FixedToolbarFeature(),
                   InlineToolbarFeature(),
                 ],
