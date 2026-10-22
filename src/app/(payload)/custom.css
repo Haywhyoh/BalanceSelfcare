@@ -1,0 +1,46 @@
+/*
+  Lexical toolbar menus are drawn on top of the editor. Their background
+  token is the same color as the page, so in dark mode the option list
+  (Headings, Table, and the other toolbar menus) has no visible panel and
+  the labels disappear into the article text. These rules sit outside
+  Payload's CSS layer so they win over that token.
+*/
+.toolbar-popup__dropdown-items,
+.slash-menu-popup,
+.popup__content,
+.rs__menu {
+  background-color: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-200);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .toolbar-popup__dropdown-items,
+html[data-theme="dark"] .slash-menu-popup,
+html[data-theme="dark"] .popup__content,
+html[data-theme="dark"] .rs__menu {
+  background-color: var(--theme-elevation-150);
+  border-color: var(--theme-elevation-300);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.toolbar-popup__dropdown-items {
+  z-index: 1000;
+  min-width: 180px;
+  max-width: 240px;
+  padding: 4px;
+}
+
+.toolbar-popup__dropdown-items .toolbar-popup__dropdown-item:hover,
+.toolbar-popup__dropdown-items .toolbar-popup__dropdown-item.active {
+  background-color: var(--theme-elevation-150);
+}
+
+html[data-theme="dark"] .toolbar-popup__dropdown-items .toolbar-popup__dropdown-item:hover,
+html[data-theme="dark"] .toolbar-popup__dropdown-items .toolbar-popup__dropdown-item.active {
+  background-color: var(--theme-elevation-250);
+}
+
+/* Item labels are already visible. The extra tooltips were landing on the article. */
+.toolbar-popup__dropdown-items .tooltip {
+  display: none;
+}
