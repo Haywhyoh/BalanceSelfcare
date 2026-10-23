@@ -44,3 +44,17 @@ html[data-theme="dark"] .toolbar-popup__dropdown-items .toolbar-popup__dropdown-
 .toolbar-popup__dropdown-items .tooltip {
   display: none;
 }
+
+/*
+  The selected author is painted with currentColor. In the sidebar that
+  resolves to a mid gray, so the name disappears into the dark field while
+  the clear icon stays bright. Match the other inputs.
+*/
+.field-type.relationship .rs__value-container > .rs__single-value,
+.field-type.relationship .relationship--single-value__text,
+.field-type.relationship .rs__multi-value__label,
+.field-type.relationship .rs__option {
+  color: var(--theme-elevation-800);
+  -webkit-text-fill-color: var(--theme-elevation-800);
+  opacity: 1;
+}
