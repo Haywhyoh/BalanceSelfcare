@@ -31,7 +31,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: "Are your therapists registered in Ontario?",
     answer:
-      "Our team includes Registered Social Workers (R.S.W.) as well as a psychotherapist practising as an RP (Qualifying) with the College of Registered Psychotherapists of Ontario. You can read each clinician's qualifications on their profile page.",
+      "Our team includes a Registered Social Worker (R.S.W.) as well as a psychotherapist practising as an RP (Qualifying) with the College of Registered Psychotherapists of Ontario. You can read each clinician's qualifications on their profile page.",
   },
   {
     question: "Is counselling with a Registered Social Worker taxable?",

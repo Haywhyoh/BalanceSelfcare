@@ -211,7 +211,7 @@ export default async function LocationPage({ params }: Props) {
           </h2>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
             Your {location.name} sessions are with the same Balance Self-Care
-            team — Registered Social Workers and an RP (Qualifying) — not a
+            team — a Registered Social Worker and an RP (Qualifying) — not a
             marketplace of unregulated coaches.
           </p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">

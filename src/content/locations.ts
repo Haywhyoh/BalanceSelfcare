@@ -41,7 +41,7 @@ export const ontarioLocations: LocationContent[] = [
       "If you have been looking for an online therapist in Toronto who can speak to burnout, anxiety, family conflict, postpartum distress, or the particular pressure of being the reliable one in your family, a complimentary 15-minute consultation is a low-pressure way to see whether we are a fit.",
     ],
     whyVirtual:
-      "Virtual therapy means your Toronto therapist is as close as a private, stable internet connection. No parking downtown, no winter streetcar delays, and no waiting room. You still work with Ontario-registered clinicians — Registered Social Workers and an RP (Qualifying) — and receipts are emailed after each session for insurance claims.",
+      "Virtual therapy means your Toronto therapist is as close as a private, stable internet connection. No parking downtown, no winter streetcar delays, and no waiting room. You still work with Ontario-registered clinicians — a Registered Social Worker and an RP (Qualifying) — and receipts are emailed after each session for insurance claims.",
     whoWeHelp:
       "Individuals, couples, and families 16 and older living in Toronto and the GTA. Many of our clients are Black, Caribbean, African, or otherwise racialized; we also welcome anyone seeking culturally responsive online counselling.",
     cardSummary:
@@ -143,7 +143,7 @@ export const ontarioLocations: LocationContent[] = [
       "Looking for an online therapist in Mississauga who will not treat your identity as a footnote? Book a free 15-minute consultation and see whether we feel like the right fit.",
     ],
     whyVirtual:
-      "Peel traffic is not a therapeutic intervention. Virtual therapy lets Mississauga clients skip the drive, keep evenings for family, and still work with Ontario-registered social workers and psychotherapists. Receipts are emailed after each session for extended health claims.",
+      "Peel traffic is not a therapeutic intervention. Virtual therapy lets Mississauga clients skip the drive, keep evenings for family, and still work with an Ontario-registered social worker and psychotherapist. Receipts are emailed after each session for extended health claims.",
     whoWeHelp:
       "Individuals, couples, and families 16+ in Mississauga and Peel Region, including Black, South Asian, and other racialized clients seeking culturally responsive online counselling.",
     cardSummary:
@@ -395,7 +395,7 @@ export const ontarioLocations: LocationContent[] = [
       "Start with a complimentary 15-minute consultation if you have questions about virtual psychotherapy, insurance receipts, or whether we are the right team.",
     ],
     whyVirtual:
-      "York Region traffic and packed evening schedules make in-person therapy easy to cancel. Virtual sessions from home in Vaughan are easier to keep, still confidential, and still delivered by Ontario-registered social workers and a psychotherapist practising as an RP (Qualifying).",
+      "York Region traffic and packed evening schedules make in-person therapy easy to cancel. Virtual sessions from home in Vaughan are easier to keep, still confidential, and still delivered by an Ontario-registered social worker and a psychotherapist practising as an RP (Qualifying).",
     whoWeHelp:
       "Individuals, couples, and families 16+ in Vaughan and York Region, including clients who want online counselling that respects culture, faith, and family systems.",
     cardSummary:
@@ -764,7 +764,7 @@ export const ontarioLocations: LocationContent[] = [
       {
         question: "Is an online therapist in Sudbury a real registered clinician?",
         answer:
-          "Yes. Our team includes Registered Social Workers and a psychotherapist practising as an RP (Qualifying) with the College of Registered Psychotherapists of Ontario.",
+          "Yes. Our team includes a Registered Social Worker and a psychotherapist practising as an RP (Qualifying) with the College of Registered Psychotherapists of Ontario.",
       },
       {
         question: "How do I book a virtual therapist in Sudbury?",
