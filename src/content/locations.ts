@@ -139,7 +139,7 @@ export const ontarioLocations: LocationContent[] = [
     lede: "Online therapy for Mississauga and Peel Region — for people who want a culturally competent clinician without driving to Toronto or sitting on a local waitlist.",
     localContext: [
       "Mississauga is one of the most diverse cities in Canada, and therapy that ignores culture, faith, or family expectation often misses the point. People here juggle 403 and QEW commutes, multigenerational households, and the quiet pressure to keep it together. Balance Self-Care offers virtual therapy to Mississauga residents so you can meet an Ontario-registered clinician from home in Port Credit, Square One, Meadowvale, Malton, or Churchill Meadows.",
-      "Our team includes Black and South Asian clinicians and a commitment to supporting racialized clients. Whether you are navigating burnout after another year of being the reliable sibling, anxiety that shows up in your body, or conflict with parents who love you and still do not speak the language of mental health, online sessions give you a private space that is yours.",
+      "Our clinicians are committed to supporting racialized clients. Whether you are navigating burnout after another year of being the reliable sibling, anxiety that shows up in your body, or conflict with parents who love you and still do not speak the language of mental health, online sessions give you a private space that is yours.",
       "Looking for an online therapist in Mississauga who will not treat your identity as a footnote? Book a free 15-minute consultation and see whether we feel like the right fit.",
     ],
     whyVirtual:
@@ -341,7 +341,7 @@ export const ontarioLocations: LocationContent[] = [
     lede: "Online therapy for Markham and York Region — for high-achieving families, newcomers, and anyone who wants a clinician who understands cultural expectation as well as anxiety.",
     localContext: [
       "Markham holds a lot: academic pressure, family businesses, caregiving for elders, and the quiet cost of being the child who is supposed to make the sacrifice worth it. Therapy that only talks about symptoms, and never about duty, migration, or shame, often falls flat. Balance Self-Care offers virtual therapy to Markham residents so you can meet an Ontario-registered clinician from Unionville, Cornell, Milliken, or downtown Markham.",
-      "Our clinicians include Black and South Asian therapists with a commitment to culturally responsive, intersectional care. Sessions are by phone or PHIPA-compliant video — useful when Highway 7 and the 404 already take enough of your week.",
+      "Our clinicians bring a commitment to culturally responsive, intersectional care. Sessions are by phone or PHIPA-compliant video — useful when Highway 7 and the 404 already take enough of your week.",
       "If you have been looking for an online therapist in Markham who can work with anxiety, family conflict, burnout, or identity, begin with a free 15-minute consultation.",
     ],
     whyVirtual:
@@ -609,7 +609,7 @@ export const ontarioLocations: LocationContent[] = [
       {
         question: "Is there a culturally responsive online therapist available to Barrie residents?",
         answer:
-          "That is a core reason we offer virtual care across Ontario. Our team includes Black and South Asian clinicians and a commitment to supporting racialized clients.",
+          "That is a core reason we offer virtual care across Ontario. Our clinicians are committed to supporting racialized clients.",
       },
       {
         question: "What if I am at a cottage or travelling within Ontario?",

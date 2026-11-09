@@ -49,31 +49,6 @@ export const teamMembers: TeamMember[] = [
     oldPaths: ["/about-rachel/", "/about-rachel"],
   },
   {
-    slug: "sabah-pinto",
-    name: "Sabah Pinto",
-    shortName: "Sabah Pinto",
-    role: "Therapist",
-    image: "/images/team/sabah.png",
-    imageAlt: "Sabah Pinto, therapist at Balance Self-Care",
-    specialties: ["Relationship issues", "Family conflict", "School concerns"],
-    qualifications: ["R.S.W.", "MSW"],
-    janeUrl: "https://balanceself-care.janeapp.com/#/staff_member/2",
-    summary:
-      "South Asian, Muslim Licensed Social Worker supporting individuals, children, and families with culturally sensitive, holistic care.",
-    bio: [
-      "Hello, and welcome! I'm Sabah Pinto, a South Asian, Muslim woman and Licensed Social Worker (MSW) with a deep commitment to supporting individuals, children, and families through their most challenging moments. Since 2014, I have had the privilege of working in various settings, providing care and guidance to clients navigating life's complexities.",
-      "My approach is holistic, centered on understanding your unique story, experiences, and cultural background. I firmly believe that everyone has the potential for growth and healing, and my role is to walk alongside you as you tap into your strengths and create meaningful change.",
-      "I utilize a blend of Solution-Focused Brief Therapy (SFBT), Cognitive Behavioral Therapy (CBT), Dialectical Behavioral Therapy (DBT) skills, and Narrative Therapy techniques. This combination allows me to tailor our work to your specific needs, whether you are looking to shift unhelpful thought patterns, learn new coping strategies, or explore the narratives you carry that may be impacting your mental health.",
-    ],
-    approach: [
-      "I understand the importance of building a safe, non-judgmental space where you feel heard, valued, and understood.",
-      "As a South Asian woman with a Muslim background, I honor the significance of cultural sensitivity in therapy. Whether you're facing issues related to identity, cultural expectations, or mental health struggles, I am here to guide you with compassion, respect, and a commitment to your growth.",
-      "I also have a passion for supporting children who may be navigating anxiety, stress, or other challenges. My approach with children is warm, engaging, and focused on equipping them with the tools they need to manage their emotions and thrive.",
-      "I look forward to hearing your story and supporting you on your path toward peace, clarity, and fulfillment.",
-    ],
-    oldPaths: ["/about-sabah/", "/about-sabah"],
-  },
-  {
     slug: "cynthia-ekeanyawu",
     name: "Cynthia Ekeanyawu",
     shortName: "Cynthia Ekeanyawu",
@@ -96,40 +71,6 @@ export const teamMembers: TeamMember[] = [
       "You do not need to have everything figured out before reaching out. I am here to walk alongside you through the process.",
     ],
     oldPaths: ["/about-cynthia/", "/about-cynthia"],
-  },
-  {
-    slug: "latoya-buchanan",
-    name: "Latoya Buchanan",
-    shortName: "Latoya Buchanan",
-    role: "Therapist",
-    image: "/images/team/latoya.jpg",
-    imageAlt: "Latoya Buchanan, therapist at Balance Self-Care",
-    specialties: [
-      "Trauma",
-      "Intimate partner violence",
-      "Anxiety",
-      "Depression",
-      "Grief",
-      "Life transitions",
-    ],
-    qualifications: ["MSW", "RSW"],
-    janeUrl: "https://balanceself-care.janeapp.com/",
-    summary:
-      "Trauma-informed Registered Social Worker supporting individuals and youth, with a commitment to Black and racialized women and youth.",
-    bio: [
-      "How have you been feeling lately?",
-      "You may be someone who is used to holding everything together—supporting others, managing responsibilities, and pushing through difficult moments even when things feel overwhelming. You may carry a lot internally while continuing to show up for the people around you. Over time, constantly holding everything together can feel exhausting, especially without a space where you can slow down, reflect, and receive support.",
-      "You do not have to navigate it alone.",
-      "My name is Latoya, and I am a Registered Social Worker (MSW, RSW) providing counselling to individuals and youth seeking a space where they can feel heard, respected, and understood. I believe therapy is a collaborative process where your experiences, strengths, and personal story are valued.",
-      "I have experience supporting clients navigating trauma, intimate partner violence, anxiety, depression, grief, and life transitions. I am particularly committed to supporting Black and racialized women and youth, recognizing the ways culture, systemic barriers, relationships, and lived experiences can shape mental health and access to care.",
-    ],
-    approach: [
-      "My approach to therapy is grounded in trauma-informed, anti-oppressive, and strengths-based practices. I strive to create a therapeutic environment where clients feel emotionally safe, empowered, and supported in exploring their thoughts, feelings, and experiences without judgment.",
-      "I believe that healing looks different for everyone. Together, we can work at a pace that feels right for you while building awareness, developing coping strategies, strengthening your sense of self, and exploring meaningful steps toward growth and change.",
-      "I draw from evidence-informed approaches, including Cognitive Behavioural Therapy (CBT), DBT-informed skills, and strength-based practices, while tailoring sessions to your unique needs, goals, and experiences.",
-      "You deserve support that honours your story, your resilience, and the journey that has brought you here. If you're considering counselling, I invite you to begin with a conversation to explore whether we may be a good fit.",
-    ],
-    oldPaths: ["/latoya/", "/latoya"],
   },
 ];
 

@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "Team",
   description:
-    "Meet the Balance Self-Care clinicians — Rachel Grant, Sabah Pinto, Cynthia Ekeanyawu, and Latoya Buchanan — offering culturally responsive psychotherapy.",
+    "Meet the Balance Self-Care clinicians — Rachel Grant and Cynthia Ekeanyawu — offering culturally responsive psychotherapy.",
   path: "/team",
   image: "/images/team/rachel.jpg",
 });
@@ -44,7 +44,7 @@ export default function TeamPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamCard key={member.slug} member={member} />
           ))}

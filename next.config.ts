@@ -35,12 +35,17 @@ const nextConfig: NextConfig = {
       // Therapist profiles
       { source: "/about-rachel", destination: "/team/rachel-grant/", permanent: true },
       { source: "/about-rachel/", destination: "/team/rachel-grant/", permanent: true },
-      { source: "/about-sabah", destination: "/team/sabah-pinto/", permanent: true },
-      { source: "/about-sabah/", destination: "/team/sabah-pinto/", permanent: true },
       { source: "/about-cynthia", destination: "/team/cynthia-ekeanyawu/", permanent: true },
       { source: "/about-cynthia/", destination: "/team/cynthia-ekeanyawu/", permanent: true },
-      { source: "/latoya", destination: "/team/latoya-buchanan/", permanent: true },
-      { source: "/latoya/", destination: "/team/latoya-buchanan/", permanent: true },
+      // Former clinicians. Keep the old URLs from 404ing.
+      { source: "/about-sabah", destination: "/team/", permanent: true },
+      { source: "/about-sabah/", destination: "/team/", permanent: true },
+      { source: "/latoya", destination: "/team/", permanent: true },
+      { source: "/latoya/", destination: "/team/", permanent: true },
+      { source: "/team/sabah-pinto", destination: "/team/", permanent: true },
+      { source: "/team/sabah-pinto/", destination: "/team/", permanent: true },
+      { source: "/team/latoya-buchanan", destination: "/team/", permanent: true },
+      { source: "/team/latoya-buchanan/", destination: "/team/", permanent: true },
 
       // Thin / technical URLs
       { source: "/1983-2", destination: "/", permanent: true },

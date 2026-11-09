@@ -214,7 +214,7 @@ export default async function LocationPage({ params }: Props) {
             team — Registered Social Workers and an RP (Qualifying) — not a
             marketplace of unregulated coaches.
           </p>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {teamMembers.map((member) => (
               <li key={member.slug}>
                 <Link

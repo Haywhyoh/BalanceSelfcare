@@ -151,7 +151,7 @@ export default function AboutPage() {
             View team page
           </Button>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamCard key={member.slug} member={member} />
           ))}

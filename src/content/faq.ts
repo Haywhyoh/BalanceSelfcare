@@ -26,7 +26,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: "What does culturally responsive therapy mean?",
     answer:
-      "It means your therapist takes your culture, identity, faith, family context, and lived experience seriously as part of your care, rather than treating them as an afterthought. Our team includes Black and South Asian clinicians with a commitment to supporting racialized clients, and we welcome faith and spirituality in sessions if that is important to you.",
+      "It means your therapist takes your culture, identity, faith, family context, and lived experience seriously as part of your care, rather than treating them as an afterthought. Our clinicians are committed to supporting racialized clients, and we welcome faith and spirituality in sessions if that is important to you.",
   },
   {
     question: "Are your therapists registered in Ontario?",
